@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'TaskAppSooryen';
+export class AppComponent implements OnInit {
+  public posts: any[] = [];
+
+  constructor() {
+  }
+
+  ngOnInit() {
+
+  }
+
 }

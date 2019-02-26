@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+  
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="postForm" (ngSubmit)="createNote()">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input formControlName="title" type="text" class="form-control" id="text">
+            <small class="errMsg" *ngIf="!postForm.valid && postForm.controls.title.errors && postForm.controls.title.errors.required && postForm.controls.title.touched">
+              required
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="body">Body</label>
+            <input formControlName="body" type="text" class="form-control" id="body">
+            <small class="errMsg" *ngIf="!postForm.valid && postForm.controls.body.errors && postForm.controls.body.errors.required && postForm.controls.body.touched">
+              required
+            </small>
+          </div>
+          <div class="float-right">
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+  
+    </div>
+  </div>
+  

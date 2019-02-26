@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    Edit Note
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="editForm" (ngSubmit)="updateNote()">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input formControlName="title" type="text" class="form-control" id="text">
+          <small class="errMsg" *ngIf="!editForm.valid && editForm.controls.title.errors && editForm.controls.title.errors.required && editForm.controls.title.touched">
+            required
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="body">Body</label>
+          <input formControlName="body" type="text" class="form-control" id="body">
+          <small class="errMsg" *ngIf="!editForm.valid && editForm.controls.body.errors && editForm.controls.body.errors.required && editForm.controls.body.touched">
+            required
+          </small>
+        </div>
+        <div class="float-right">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
